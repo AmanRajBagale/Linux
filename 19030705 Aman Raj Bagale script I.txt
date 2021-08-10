@@ -1,0 +1,583 @@
+Script started on 2021-04-19 08:42:35+05:45 [TERM="xterm-256color" TTY="/dev/tty1" COLUMNS="83" LINES="44"]
+amanpro@DESKTOP-5ST0GH6:~$ export PS1="\`pwd\` $ "
+
+1.
+/home/amanpro $ mkdir -p NBA/{Lakers,Miami,"Chicago Bulls","Brooklyn nets","Dallas Maverick"}
+/home/amanpro $ tree NBA
+NBA
+├── Brooklyn nets
+├── Chicago Bulls
+├── Dallas Maverick
+├── Lakers
+└── Miami
+
+5 directories, 0 files
+
+2.
+/home/amanpro $ cd NBA/Miami/
+/home/amanpro/NBA/Miami $ touch file1 file2
+/home/amanpro/NBA/Miami $ ls
+file1  file2
+/home/amanpro/NBA/Miami $ pwd
+/home/amanpro/NBA/Miami
+
+3.
+/home/amanpro/NBA/Miami $ cd ..
+/home/amanpro/NBA $ rm -ir Miami/
+rm: descend into directory 'Miami/'? yes
+rm: remove regular empty file 'Miami/file1'? yes
+rm: remove regular empty file 'Miami/file2'? yes
+rm: remove directory 'Miami/'? yes
+/home/amanpro/NBA $ ls
+'Brooklyn nets'  'Chicago Bulls'  'Dallas Maverick'   Lakers
+
+4.
+/home/amanpro/NBA $ echo -e "Hello! I am big fan of NBA finals.\n 14<(2+2)"
+Hello! I am big fan of NBA finals.
+ 14<(2+2)
+/home/amanpro/NBA $ pwd
+/home/amanpro/NBA
+/home/amanpro/NBA $ cd Lakers/
+
+5.
+/home/amanpro/NBA/Lakers $ pwd; cd; pwd
+/home/amanpro/NBA/Lakers
+/home/amanpro
+/home/amanpro $ echo -e "At first, this order shows the current working directory.\nAfter then, it changes the current directory catalog to the home directory.\nIn last, the current working directory is appeared to confirm that it shows in the home directory."
+At first, this order shows the current working directory.
+After then, it changes the current directory catalog to the home directory.
+In last, the current working directory is appeared to confirm that it shows in the home directory.
+
+6.
+/home/amanpro $ cd NBA/Lakers/
+/home/amanpro/NBA/Lakers $ pwd; cd ..; pwd; cd ..; pwd
+/home/amanpro/NBA/Lakers
+/home/amanpro/NBA
+/home/amanpro
+/home/amanpro $ echo -e "Simultaneously, it shows the current working directory.\nAt that time, the current working file is changed or moved to the parent vault of the current directory.\nThen, the current working directory are shown.\nAt that moment, the current working directory is changed or moved to the parent library of the current directory.\nLastly, the current working directories are again appeared to confirm that the current working directory is changed."
+Simultaneously, it shows the current working directory.
+At that time, the current working file is changed or moved to the parent vault of the current directory.
+Then, the current working directory are shown.
+At that moment, the current working directory is changed or moved to the parent library of the current directory.
+Lastly, the current working directories are again appeared to confirm that the current working directory is changed.
+
+7.
+/home/amanpro $ cd; pwd
+/home/amanpro
+/home/amanpro $ echo -e "These command displays a list of files and directories that are not hidden from the working directory."
+These command displays a list of files and directories that are not hidden from the working directory.
+/home/amanpro $ ls
+19030705cw2  amancw2  KC  LM  NBA  NJ
+/home/amanpro $ echo -e "ls command displays a list of files and directories that are not hidden to the working directory."
+ls command displays a list of files and directories that are not hidden to the working directory.
+/home/amanpro $ ls -a
+.   19030705cw2  .bash_history  .bashrc  LM      NBA  .profile
+..  amancw2      .bash_logout   KC       .local  NJ
+/home/amanpro $ echo -e "ls -a command lists, files and directories both hidden and unhidden in the working directory."
+ls -a command lists, files and directories both hidden and unhidden in the working directory.
+/home/amanpro $ ls -al
+total 24
+drwxr-xr-x 1 amanpro amanpro  512 Apr 19 08:43 .
+drwxr-xr-x 1 root    root     512 Apr 10 13:27 ..
+-rw-r--r-- 1 amanpro amanpro 3584 Apr 19 08:48 19030705cw2
+-rw-r--r-- 1 amanpro amanpro 3048 Apr 11 09:15 amancw2
+-rw------- 1 amanpro amanpro 5341 Apr 19 08:42 .bash_history
+-rw-r--r-- 1 amanpro amanpro  220 Apr 10 13:27 .bash_logout
+-rw-r--r-- 1 amanpro amanpro 3669 Apr 10 13:56 .bashrc
+-rw-r--r-- 1 amanpro amanpro  120 Apr 10 23:20 KC
+-rw-r--r-- 1 amanpro amanpro  168 Apr 10 23:16 LM
+drwxr-xr-x 1 amanpro amanpro  512 Apr 10 13:52 .local
+drwxr-xr-x 1 amanpro amanpro  512 Apr 19 08:44 NBA
+-rw-r--r-- 1 amanpro amanpro  161 Apr 10 23:18 NJ
+-rw-r--r-- 1 amanpro amanpro  807 Apr 10 13:27 .profile
+/home/amanpro $ echo -e "Combination of ls -a and ls - i.e ls -al commands which provides information about each hidden, unhidden directory and files in a separate file."
+Combination of ls -a and ls - i.e ls -al commands which provides information about each hidden, unhidden directory and files in a separate file.
+
+8.
+/home/amanpro $ cd; pwd; cd NBA; pwd
+/home/amanpro
+/home/amanpro/NBA
+/home/amanpro/NBA $ echo -e "Using cd command, the present working directory is changed to the home directory.\nThen, pwd command is used to display present working directory.\nAfter that, the present working directory is changed to the NBA directory using cd NBA command.\nAt last, the present working directory is displayed again which is the NBA directory."
+Using cd command, the present working directory is changed to the home directory.
+Then, pwd command is used to display present working directory.
+After that, the present working directory is changed to the NBA directory using cd NBA command.
+At last, the present working directory is displayed again which is the NBA directory.
+/home/amanpro/NBA $ ls -R
+.:
+'Brooklyn nets'  'Chicago Bulls'  'Dallas Maverick'   Lakers
+
+'./Brooklyn nets':
+
+'./Chicago Bulls':
+
+'./Dallas Maverick':
+
+./Lakers:
+/home/amanpro/NBA $ echo -e "ls -R option lists directory tree looping."
+ls -R option lists directory tree looping.
+
+9.
+/home/amanpro/NBA $ cd 'Chicago Bulls'/
+/home/amanpro/NBA/Chicago Bulls $ cat > 'File name'
+Contents of the files
+^Z
+[1]+  Stopped                 cat > 'File name'
+/home/amanpro/NBA/Chicago Bulls $ cat>testX
+aaabb Aaaaa
+AAAAA
+bbbcc Bbbbb
+BBBBB
+ff-ff Ccccc
+CCCCC
+cccdd Ddddd
+DDDDD
+^Z
+[2]+  Stopped                 cat > testX
+/home/amanpro/NBA/Chicago Bulls $ cat>testY
+aaabb Aaaaa
+AAAAA
+bbbcc Bbbbb
+BBBBB
+ff-ff Ccccc
+CCCCC
+cccdd Ddddd
+DDDDD
+^Z
+[3]+  Stopped                 cat > testY
+/home/amanpro/NBA/Chicago Bulls $ cat>testZ
+aaabb Aaaaa
+AAAAA
+bbbcc Bbbbb
+BBBBB
+ff-ff Ccccc
+CCCCC
+cccdd Ddddd
+DDDDD
+^Z
+[4]+  Stopped                 cat > testZ
+
+10.
+/home/amanpro/NBA/Chicago Bulls $ cat 'File name'
+Contents of the files
+/home/amanpro/NBA/Chicago Bulls $ cat testX
+aaabb Aaaaa
+AAAAA
+bbbcc Bbbbb
+BBBBB
+ff-ff Ccccc
+CCCCC
+cccdd Ddddd
+DDDDD
+/home/amanpro/NBA/Chicago Bulls $ cat testY
+aaabb Aaaaa
+AAAAA
+bbbcc Bbbbb
+BBBBB
+ff-ff Ccccc
+CCCCC
+cccdd Ddddd
+DDDDD
+/home/amanpro/NBA/Chicago Bulls $ cat testZ
+aaabb Aaaaa
+AAAAA
+bbbcc Bbbbb
+BBBBB
+ff-ff Ccccc
+CCCCC
+cccdd Ddddd
+DDDDD
+
+11.
+/home/amanpro/NBA/Chicago Bulls $ cp {'File name',testX,testY,testZ} ../'Brooklyn nets'/
+
+12.
+/home/amanpro/NBA/Chicago Bulls $ cat testX testY testZ
+aaabb Aaaaa
+AAAAA
+bbbcc Bbbbb
+BBBBB
+ff-ff Ccccc
+CCCCC
+cccdd Ddddd
+DDDDD
+aaabb Aaaaa
+AAAAA
+bbbcc Bbbbb
+BBBBB
+ff-ff Ccccc
+CCCCC
+cccdd Ddddd
+DDDDD
+aaabb Aaaaa
+AAAAA
+bbbcc Bbbbb
+BBBBB
+ff-ff Ccccc
+CCCCC
+cccdd Ddddd
+DDDDD
+
+13.
+/home/amanpro/NBA/Chicago Bulls $ cat testX testY testZ > testResult
+/home/amanpro/NBA/Chicago Bulls $ cat testResult
+aaabb Aaaaa
+AAAAA
+bbbcc Bbbbb
+BBBBB
+ff-ff Ccccc
+CCCCC
+cccdd Ddddd
+DDDDD
+aaabb Aaaaa
+AAAAA
+bbbcc Bbbbb
+BBBBB
+ff-ff Ccccc
+CCCCC
+cccdd Ddddd
+DDDDD
+aaabb Aaaaa
+AAAAA
+bbbcc Bbbbb
+BBBBB
+ff-ff Ccccc
+CCCCC
+cccdd Ddddd
+DDDDD
+/home/amanpro/NBA/Chicago Bulls $ cat test[XYZ]
+aaabb Aaaaa
+AAAAA
+bbbcc Bbbbb
+BBBBB
+ff-ff Ccccc
+CCCCC
+cccdd Ddddd
+DDDDD
+aaabb Aaaaa
+AAAAA
+bbbcc Bbbbb
+BBBBB
+ff-ff Ccccc
+CCCCC
+cccdd Ddddd
+DDDDD
+aaabb Aaaaa
+AAAAA
+bbbcc Bbbbb
+BBBBB
+ff-ff Ccccc
+CCCCC
+cccdd Ddddd
+DDDDD
+/home/amanpro/NBA/Chicago Bulls $  echo -e "All the data from the file testX, testY and testZ are compiles by this command and it shows the output as a whole."
+All the data from the file testX, testY and testZ are compiles by this command and it shows the output as a whole.
+
+14.
+/home/amanpro/NBA/Chicago Bulls $ ls -l
+total 0
+-rw-r--r-- 1 amanpro amanpro  22 Apr 19 08:51 'File name'
+-rw-r--r-- 1 amanpro amanpro 216 Apr 19 08:56  testResult
+-rw-r--r-- 1 amanpro amanpro  72 Apr 19 08:52  testX
+-rw-r--r-- 1 amanpro amanpro  72 Apr 19 08:53  testY
+-rw-r--r-- 1 amanpro amanpro  72 Apr 19 08:54  testZ
+/home/amanpro/NBA/Chicago Bulls $ chmod -rwx testX
+/home/amanpro/NBA/Chicago Bulls $ ls -l testX
+---------- 1 amanpro amanpro 72 Apr 19 08:52 testX
+/home/amanpro/NBA/Chicago Bulls $ cat testX
+cat: testX: Permission denied
+/home/amanpro/NBA/Chicago Bulls $ cat>>testX
+bash: testX: Permission denied
+/home/amanpro/NBA/Chicago Bulls $ chmod u+rw testX
+/home/amanpro/NBA/Chicago Bulls $ ls -l testX
+-rw------- 1 amanpro amanpro 72 Apr 19 08:52 testX
+/home/amanpro/NBA/Chicago Bulls $ cat testX
+aaabb Aaaaa
+AAAAA
+bbbcc Bbbbb
+BBBBB
+ff-ff Ccccc
+CCCCC
+cccdd Ddddd
+DDDDD
+/home/amanpro/NBA/Chicago Bulls $ cat>>testX
+This is testX.
+^Z
+[5]+  Stopped                 cat >> testX
+
+15.
+/home/amanpro/NBA/Chicago Bulls $ cd ..
+/home/amanpro/NBA $ ls -l 'Chicago Bulls'
+total 0
+-rw-r--r-- 1 amanpro amanpro  22 Apr 19 08:51 'File name'
+-rw-r--r-- 1 amanpro amanpro 216 Apr 19 08:56  testResult
+-rw------- 1 amanpro amanpro  87 Apr 19 09:02  testX
+-rw-r--r-- 1 amanpro amanpro  72 Apr 19 08:53  testY
+-rw-r--r-- 1 amanpro amanpro  72 Apr 19 08:54  testZ
+/home/amanpro/NBA $ chmod -rwx 'Chicago Bulls'
+/home/amanpro/NBA $ ls -l 'Chicago Bulls'
+ls: cannot open directory 'Chicago Bulls': Permission denied
+/home/amanpro/NBA $ cat 'Chicago Bulls'
+cat: 'Chicago Bulls': Permission denied
+/home/amanpro/NBA $ cat>'Chicago Bulls'/file5
+bash: Chicago Bulls/file5: Permission denied
+/home/amanpro/NBA $ ls 'Chicago Bulls'
+ls: cannot open directory 'Chicago Bulls': Permission denied
+/home/amanpro/NBA $ chmod +rwx 'Chicago Bulls'
+/home/amanpro/NBA $ ls -l 'Chicago Bulls'
+total 0
+-rw-r--r-- 1 amanpro amanpro  22 Apr 19 08:51 'File name'
+-rw-r--r-- 1 amanpro amanpro 216 Apr 19 08:56  testResult
+-rw------- 1 amanpro amanpro  87 Apr 19 09:02  testX
+-rw-r--r-- 1 amanpro amanpro  72 Apr 19 08:53  testY
+-rw-r--r-- 1 amanpro amanpro  72 Apr 19 08:54  testZ
+/home/amanpro/NBA $ chmod u+rwx 'Chicago Bulls'
+/home/amanpro/NBA $ ls -l 'Chicago Bulls'
+total 0
+-rw-r--r-- 1 amanpro amanpro  22 Apr 19 08:51 'File name'
+-rw-r--r-- 1 amanpro amanpro 216 Apr 19 08:56  testResult
+-rw------- 1 amanpro amanpro  87 Apr 19 09:02  testX
+-rw-r--r-- 1 amanpro amanpro  72 Apr 19 08:53  testY
+-rw-r--r-- 1 amanpro amanpro  72 Apr 19 08:54  testZ
+/home/amanpro/NBA $ cat 'Chicago Bulls'
+cat: 'Chicago Bulls': Is a directory
+/home/amanpro/NBA $ cat 'Chicago Bulls'/testX
+aaabb Aaaaa
+AAAAA
+bbbcc Bbbbb
+BBBBB
+ff-ff Ccccc
+CCCCC
+cccdd Ddddd
+DDDDD
+This is testX.
+/home/amanpro/NBA $ cat>'Chicago Bulls'/test1000
+This is test1000.
+^Z
+[6]+  Stopped                 cat > 'Chicago Bulls'/test1000
+/home/amanpro/NBA $ ls 'Chicago Bulls'
+'File name'   test1000   testResult   testX   testY   testZ
+
+16.
+/home/amanpro/NBA $ cd 'Brooklyn nets'/
+/home/amanpro/NBA/Brooklyn nets $ grep bb testX
+aaabb Aaaaa
+bbbcc Bbbbb
+/home/amanpro/NBA/Brooklyn nets $ echo "It prints lineup text and regular expressions by commanding grep. This command used to search and print words in the textX file 'bb'"
+It prints lineup text and regular expressions by commanding grep. This command used to search and print words in the textX file 'bb'
+/home/amanpro/NBA/Brooklyn nets $ grep -v bb testX
+AAAAA
+BBBBB
+ff-ff Ccccc
+CCCCC
+cccdd Ddddd
+DDDDD
+/home/amanpro/NBA/Brooklyn nets $ echo "grep -v bb testX command search and print those words which does not contain ' bb'in testX file."
+grep -v bb testX command search and print those words which does not contain ' bb'in testX file.
+/home/amanpro/NBA/Brooklyn nets $ grep -n bb testX
+1:aaabb Aaaaa
+3:bbbcc Bbbbb
+/home/amanpro/NBA/Brooklyn nets $ echo "grep -n bb testX command search and print those words that contains 'bb' in testX file excluding their line number."
+grep -n bb testX command search and print those words that contains 'bb' in testX file excluding their line number.
+/home/amanpro/NBA/Brooklyn nets $ grep -l bb *
+testX
+testY
+testZ
+/home/amanpro/NBA/Brooklyn nets $ echo "grep -l bb * command print only those files which contains the word 'bb' in it."
+grep -l bb * command print only those files which contains the word 'bb' in it.
+/home/amanpro/NBA/Brooklyn nets $ grep -i bb *
+testX:aaabb Aaaaa
+testX:bbbcc Bbbbb
+testX:BBBBB
+testY:aaabb Aaaaa
+testY:bbbcc Bbbbb
+testY:BBBBB
+testZ:aaabb Aaaaa
+testZ:bbbcc Bbbbb
+testZ:BBBBB
+/home/amanpro/NBA/Brooklyn nets $ echo "grep -i bb * order ignores case and prints the file name and the word containing 'bb'."
+grep -i bb * order ignores case and prints the file name and the word containing 'bb'.
+/home/amanpro/NBA/Brooklyn nets $ grep -i BB *
+testX:aaabb Aaaaa
+testX:bbbcc Bbbbb
+testX:BBBBB
+testY:aaabb Aaaaa
+testY:bbbcc Bbbbb
+testY:BBBBB
+testZ:aaabb Aaaaa
+testZ:bbbcc Bbbbb
+testZ:BBBBB
+/home/amanpro/NBA/Brooklyn nets $ echo "grep -i BB * command ignores case and prints the file name as well as any words that have the letter 'BB'."
+grep -i BB * command ignores case and prints the file name as well as any words that have the letter 'BB'.
+/home/amanpro/NBA/Brooklyn nets $ grep -c bb *
+File name:0
+testX:2
+testY:2
+testZ:2
+/home/amanpro/NBA/Brooklyn nets $ echo "grep -c bb * command count the number of lines that matches the file that contains 'bb' in it."
+grep -c bb * command count the number of lines that matches the file that contains 'bb' in it.
+/home/amanpro/NBA/Brooklyn nets $ grep '^A' *
+testX:AAAAA
+testY:AAAAA
+testZ:AAAAA
+/home/amanpro/NBA/Brooklyn nets $ echo "grep '^A' * command print the firstname and the words starting with 'A'."
+grep '^A' * command print the firstname and the words starting with 'A'.
+/home/amanpro/NBA/Brooklyn nets $ grep -n '^' testX
+1:aaabb Aaaaa
+2:AAAAA
+3:bbbcc Bbbbb
+4:BBBBB
+5:ff-ff Ccccc
+6:CCCCC
+7:cccdd Ddddd
+8:DDDDD
+/home/amanpro/NBA/Brooklyn nets $ echo "grep -n '^' testX command print all the lines with their line numbers of text file."
+grep -n '^' testX command print all the lines with their line numbers of text file.
+
+17.
+/home/amanpro/NBA/Brooklyn nets $ cd ..
+/home/amanpro/NBA $ alias lsal="ls -al"
+/home/amanpro/NBA $ alias lsa="ls -a"
+/home/amanpro/NBA $ cd ..
+/home/amanpro $ alias
+alias ls='ls --color=auto'
+alias lsa='ls -a'
+alias lsal='ls -al'
+alias noAcs='ls -aR | grep ^[gtw] | wc -l'
+alias noAlif='ls -a | wc -l'
+alias noAsubsir='ls -aR | wc -l'
+/home/amanpro $ lsal
+total 36
+drwxr-xr-x 1 amanpro amanpro   512 Apr 19 08:43 .
+drwxr-xr-x 1 root    root      512 Apr 10 13:27 ..
+-rw-r--r-- 1 amanpro amanpro 15360 Apr 19 09:12 19030705cw2
+-rw-r--r-- 1 amanpro amanpro  3048 Apr 11 09:15 amancw2
+-rw------- 1 amanpro amanpro  5341 Apr 19 08:42 .bash_history
+-rw-r--r-- 1 amanpro amanpro   220 Apr 10 13:27 .bash_logout
+-rw-r--r-- 1 amanpro amanpro  3669 Apr 10 13:56 .bashrc
+-rw-r--r-- 1 amanpro amanpro   120 Apr 10 23:20 KC
+-rw-r--r-- 1 amanpro amanpro   168 Apr 10 23:16 LM
+drwxr-xr-x 1 amanpro amanpro   512 Apr 10 13:52 .local
+drwxr-xr-x 1 amanpro amanpro   512 Apr 19 08:44 NBA
+-rw-r--r-- 1 amanpro amanpro   161 Apr 10 23:18 NJ
+-rw-r--r-- 1 amanpro amanpro   807 Apr 10 13:27 .profile
+/home/amanpro $ lsa
+.   19030705cw2  .bash_history  .bashrc  LM      NBA  .profile
+..  amancw2      .bash_logout   KC       .local  NJ
+
+18.
+/home/amanpro $ unalias lsa lsal
+/home/amanpro $ alias
+alias ls='ls --color=auto'
+alias noAcs='ls -aR | grep ^[gtw] | wc -l'
+alias noAlif='ls -a | wc -l'
+alias noAsubsir='ls -aR | wc -l'
+/home/amanpro $ lsal
+bash: lsal: command not found
+/home/amanpro $ lsa
+bash: lsa: command not found
+
+19.
+/home/amanpro $ nano .bashrc
+/home/amanpro $ . .bashrc
+amanpro@DESKTOP-5ST0GH6:~$ exit
+exit
+There are stopped jobs.
+amanpro@DESKTOP-5ST0GH6:~$ script -a 19030705cw2
+Script started, file is 19030705cw2
+amanpro@DESKTOP-5ST0GH6:~$ export PS1="\`pwd\` $ "
+/home/amanpro $ alias
+alias ls='ls --color=auto'
+alias lsa='ls -a'
+alias lsal='ls -al'
+alias noAcs='ls -aR | grep ^[gtw] | wc -l'
+alias noAlif='ls -a | wc -l'
+alias noAsubsir='ls -aR | wc -l'
+
+20.
+/home/amanpro $ lsal
+total 52
+drwxr-xr-x 1 amanpro amanpro   512 Apr 19 09:14 .
+drwxr-xr-x 1 root    root      512 Apr 10 13:27 ..
+-rw-r--r-- 1 amanpro amanpro 27648 Apr 19 09:14 19030705cw2
+-rw-r--r-- 1 amanpro amanpro  3048 Apr 11 09:15 amancw2
+-rw------- 1 amanpro amanpro  5341 Apr 19 08:42 .bash_history
+-rw-r--r-- 1 amanpro amanpro   220 Apr 10 13:27 .bash_logout
+-rw-r--r-- 1 amanpro amanpro  3669 Apr 10 13:56 .bashrc
+-rw-r--r-- 1 amanpro amanpro   120 Apr 10 23:20 KC
+-rw-r--r-- 1 amanpro amanpro   168 Apr 10 23:16 LM
+drwxr-xr-x 1 amanpro amanpro   512 Apr 10 13:52 .local
+drwxr-xr-x 1 amanpro amanpro   512 Apr 19 08:44 NBA
+-rw-r--r-- 1 amanpro amanpro   161 Apr 10 23:18 NJ
+-rw-r--r-- 1 amanpro amanpro   807 Apr 10 13:27 .profile
+
+21.
+/home/amanpro $ lsa
+.   19030705cw2  .bash_history  .bashrc  LM      NBA  .profile
+..  amancw2      .bash_logout   KC       .local  NJ
+
+22.
+/home/amanpro $ alias
+alias ls='ls --color=auto'
+alias lsa='ls -a'
+alias lsal='ls -al'
+alias noAcs='ls -aR | grep ^[gtw] | wc -l'
+alias noAlif='ls -a | wc -l'
+alias noAsubsir='ls -aR | wc -l'
+
+23.
+/home/amanpro $ noAllf
+bash: noAllf: command not found
+/home/amanpro $ noAlif
+13
+
+24.
+/home/amanpro $ noAsubsir
+62
+
+25.
+/home/amanpro $ noAcs
+8
+
+26.
+/home/amanpro $ fc -l
+204      script 19030705cw2
+205      ls
+206      rm 19030705cw2
+207      rm NBA
+208      rm -i NBA
+209      rm -r NBA
+210      ls
+211      export PS1="\`pwd\` $ "
+212      alias
+213      lsal
+214      lsa
+215      alias
+216      noAllf
+217      noAlif
+218      noAsubsir
+219      noAcs
+
+27.
+/home/amanpro $ !-8
+lsal
+total 52
+drwxr-xr-x 1 amanpro amanpro   512 Apr 19 09:14 .
+drwxr-xr-x 1 root    root      512 Apr 10 13:27 ..
+-rw-r--r-- 1 amanpro amanpro 30208 Apr 19 09:18 19030705cw2
+-rw-r--r-- 1 amanpro amanpro  3048 Apr 11 09:15 amancw2
+-rw------- 1 amanpro amanpro  5341 Apr 19 08:42 .bash_history
+-rw-r--r-- 1 amanpro amanpro   220 Apr 10 13:27 .bash_logout
+-rw-r--r-- 1 amanpro amanpro  3669 Apr 10 13:56 .bashrc
+-rw-r--r-- 1 amanpro amanpro   120 Apr 10 23:20 KC
+-rw-r--r-- 1 amanpro amanpro   168 Apr 10 23:16 LM
+drwxr-xr-x 1 amanpro amanpro   512 Apr 10 13:52 .local
+drwxr-xr-x 1 amanpro amanpro   512 Apr 19 08:44 NBA
+-rw-r--r-- 1 amanpro amanpro   161 Apr 10 23:18 NJ
+-rw-r--r-- 1 amanpro amanpro   807 Apr 10 13:27 .profile
+
+28.
+/home/amanpro $ !m
+mkdir -p NBA/{Lakers,Miami,"Chicago Bulls","Brooklyn nets","Dallas Maverick"}
+/home/amanpro $ exit
+exit
+Script done on 2021-04-19 09:18:44+05:45 [COMMAND_EXIT_CODE="0"]
